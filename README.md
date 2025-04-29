@@ -103,7 +103,8 @@ In WSL2, install Ansible and SSH client, and docker integration with WSL distros
 ```bash
 wsl --install
 ```
-https://github.com/user-attachments/assets/200a5052-63f9-4fbb-a3e1-41883533a7ad
+
+Ansible/1.png
 
 
 ```bash
