@@ -371,7 +371,8 @@ for i in {1..5}; do
     docker rm server$i
 done
 ```
-![Uploading 19.png…]()
+![19](https://github.com/user-attachments/assets/4eb190b9-e367-4759-968e-da6903a32e93)
+
 
 
 ```bash
