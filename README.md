@@ -1,8 +1,3 @@
-<div align="center">
-    ![1615449048633](https://github.com/user-attachments/assets/f9f70ed6-f57e-4924-a275-6749963e819b)
-
-
-</div>
 
 # Ansible Demo with Docker
 
