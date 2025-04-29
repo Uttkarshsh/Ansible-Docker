@@ -1,5 +1,6 @@
 <div align="center">
-    <img src="/assets/1615449048633.png">
+    ![1615449048633](https://github.com/user-attachments/assets/c0476ce7-7842-4311-87b9-7812ae3741d2)
+
 </div>
 
 # Ansible Demo with Docker
