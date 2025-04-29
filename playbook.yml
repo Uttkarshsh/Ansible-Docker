@@ -1,0 +1,36 @@
+---
+- name: Configure multiple servers
+  hosts: servers
+  become: yes
+
+  tasks:
+      - name: Update apt package index
+        apt:
+            update_cache: yes
+
+      - name: Install Python 3
+        apt:
+            name: python3
+            state: latest
+
+      - name: Create test file with content
+        copy:
+            dest: /root/test_file.txt
+            content: |
+                This is a test file created by Ansible
+                Server name: {{ inventory_hostname }}
+                Current date: {{ ansible_date_time.date }}
+
+      - name: Display system information
+        command: uname -a
+        register: uname_output
+
+      - name: Show disk space
+        command: df -h
+        register: disk_space
+
+      - name: Print results
+        debug:
+            msg:
+                - "System info: {{ uname_output.stdout }}"
+                - "Disk space: {{ disk_space.stdout_lines }}"
