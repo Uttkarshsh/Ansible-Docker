@@ -104,22 +104,19 @@ In WSL2, install Ansible and SSH client, and docker integration with WSL distros
 wsl --install
 ```
 
-Ansible/1.png
-
-
 ```bash
 sudo apt update
 ```
+![1](https://github.com/user-attachments/assets/8a6b82d9-2198-4b81-bb37-08b45278f351)
 
 
 ```bash
 sudo apt install -y ansible openssh-client
 ```
-![image](![1](https://github.com/user-attachments/assets/152cdc16-4762-498b-a2bb-200dc92ca864)
-)
- 
-![image](![2](https://github.com/user-attachments/assets/318cdb90-081e-4a26-9313-401c6501f637)
-)
+![1](https://github.com/user-attachments/assets/e88e7084-46a3-4285-bb48-e259021b3d26)
+
+![2](https://github.com/user-attachments/assets/53f3f8a3-c4ef-4778-a7fb-ab496d87b335)
+
 
 ### 2. Create Project Directory
 
@@ -129,8 +126,7 @@ cd ~/ansible-demo
 mkdir -p .ssh
 ```
 
-![image](![3](https://github.com/user-attachments/assets/5340fae0-980a-41d4-be9e-2cc82200f098)
-)
+![3](https://github.com/user-attachments/assets/5dab7b5f-af55-47b8-98cc-8eea7748c81c)
 
 ### 3. Generate SSH Keys
 
@@ -144,9 +140,10 @@ chmod 600 .ssh/ansible_key
 chmod 644 .ssh/ansible_key.pub
 ```
 
-![image](![4](https://github.com/user-attachments/assets/7ed8410e-7fc3-466d-a0f2-80fcc369297c)
-)
-![5](https://github.com/user-attachments/assets/9ebf3d0c-df25-452f-b4a3-c9f92858dcd5)
+![4](https://github.com/user-attachments/assets/5a430d70-dfc2-408a-8ff1-8f756b893f7e)
+
+![5](https://github.com/user-attachments/assets/00cf6bbf-3ba7-4672-b926-208b9dbb1a11)
+
 
 
 ### 4. Create Docker Containers
@@ -186,17 +183,16 @@ for i in {1..5}; do
 done
 ```
 
-![image](![6](https://github.com/user-attachments/assets/aa2afa19-9f1b-4893-8948-2086f9f8e0b8)
-)
+![6](https://github.com/user-attachments/assets/f4748723-9762-4f96-a369-a5ead2121fcb)
+
 
 ### 5. Verify containers are up and running:
 
 ```bash
 docker ps
 ```
+![7](https://github.com/user-attachments/assets/bbafc1d7-3836-4862-934f-84d41b0e9812)
 
-![image](![7](https://github.com/user-attachments/assets/7e32ef37-6da7-4f4c-9840-ed3211222655)
-)
 
 ### 6. Find IP of docker containers (optional ps~ we wont use this because of port mapping):
 
@@ -207,8 +203,7 @@ for i in {1..5}; do
 done
 ```
 
-![image](![8](https://github.com/user-attachments/assets/2b53de12-ac6d-4694-a704-69ebbfea973a)
-)
+![8](https://github.com/user-attachments/assets/4a97c88b-425c-4c1f-81cd-7fec52160299)
 
 ### 7. Create Inventory File in the current directory
 
@@ -235,9 +230,8 @@ ansible_ssh_common_args='-o StrictHostKeyChecking=no'
 Then press `Ctrl + D` to save and exit
 
 
-![image](![9](![9](https://github.com/user-attachments/assets/4e4956b7-c90c-457a-b1cd-c478e30f272f)
-)
-)
+![9](https://github.com/user-attachments/assets/66afaae4-f9f2-4958-875c-433ddbd688e0)
+
 
 ### 8. Create Ansible Playbook in the current directory
 
@@ -288,14 +282,12 @@ cat > playbook.yml
 
 Then press `Ctrl + D` to save and exit
 
-![image](![10](![10](https://github.com/user-attachments/assets/0b2969fa-086b-4430-bbe7-769d6bc78f8d)
-)
-)
+![10](https://github.com/user-attachments/assets/76818079-e8d4-443e-80ca-720f37bcfe42)
+
 
 The file are created in the `ansible-demo` folder, and we can check them in the file explorer by searching ansible-demo
-![image](![11](![11](https://github.com/user-attachments/assets/967c0b27-42d5-44ef-bc0d-63725c0d0b97)
-)
-)
+![11](https://github.com/user-attachments/assets/a9a123ba-7d55-478a-9d6b-dd5ae5cff363)
+
 
 ### 9. Run Ansible Playbook
 
@@ -303,9 +295,8 @@ The file are created in the `ansible-demo` folder, and we can check them in the 
 ansible-playbook -i inventory.ini playbook.yml
 ```
 
-![image](![12](https://github.com/user-attachments/assets/5e73d5a3-237c-447b-8cb0-a5233329da76)
-)
- 
+![12](https://github.com/user-attachments/assets/2429cee1-9e03-4fc4-83bc-bebe9d392ef0)
+
 ## Verification
 
 ### Manual Verification
@@ -318,8 +309,7 @@ for i in {1..5}; do
 done
 ```
 
-![image](![13](https://github.com/user-attachments/assets/2625c582-2605-47ed-a11d-5843334fa2a1)
-)
+![13](https://github.com/user-attachments/assets/49a85154-7f30-4b8e-903d-c1f27eb0f512)
 
 ```bash
 # Verify test file creation
@@ -329,8 +319,8 @@ for i in {1..5}; do
 done
 ```
 
-![image](![14](https://github.com/user-attachments/assets/9c2fe977-226c-4d04-ae21-38d274bfe58b)
-)
+![14](https://github.com/user-attachments/assets/303408b1-7d63-486a-9076-3d7e11d19bf2)
+
 
 ```bash
 # Check system information
@@ -340,8 +330,7 @@ for i in {1..5}; do
 done
 ```
 
-![image](![15](https://github.com/user-attachments/assets/2abdf7bf-561b-4ddd-b7f2-c5236f9d988b)
-)
+![15](https://github.com/user-attachments/assets/60204a53-7ac5-40d5-a9c0-6412483b0df1)
 
 ```bash
 # Verify disk space
@@ -351,8 +340,7 @@ for i in {1..5}; do
 done
 ```
 
-![image](![16](https://github.com/user-attachments/assets/c5599a97-1b80-4a65-a2dc-92599a19b07d)
-)
+![16](https://github.com/user-attachments/assets/3e4a7c19-bbe3-4192-ab67-f7da974c228f)
 
 ### Ansible Verification
 
@@ -361,16 +349,16 @@ done
 ansible servers -i inventory.ini -m stat -a "path=/root/test_file.txt"
 ```
 
-![image](![17](https://github.com/user-attachments/assets/9b363cbd-e8cc-47df-aa84-eeb274667e60)
-)
+![17](https://github.com/user-attachments/assets/8cebbaa2-3452-4fdd-bc54-4b6825e37613)
+
 
 ```bash
 # Check Python version
 ansible servers -i inventory.ini -m command -a "python3 --version"
 ```
 
-![image](![17](https://github.com/user-attachments/assets/a8ef4c7d-4314-434e-ad07-05404f0f20cd)
-)
+![18](https://github.com/user-attachments/assets/9d208989-9a83-4a02-b489-c60440d5a8b1)
+
 
 ## Cleanup
 
@@ -383,9 +371,8 @@ for i in {1..5}; do
     docker rm server$i
 done
 ```
+![Uploading 19.png…]()
 
-![image](![19](https://github.com/user-attachments/assets/1bf49a46-f525-4e90-84dd-b057be54b15e)
-)
 
 ```bash
 # Remove SSH keys
